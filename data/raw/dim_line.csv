@@ -1,0 +1,4 @@
+line_id,line_name,rated_capacity_per_hour,primary_category
+1,Line_A,120,Indoor
+2,Line_B,80,Outdoor
+3,Line_C,60,Industrial

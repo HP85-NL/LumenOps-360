@@ -1,0 +1,10 @@
+sku,product_name,category,sub_category,unit_cost_eur,ideal_cycle_time_sec,bom_components_json
+IND-BAT-001,LED Batten Light 36W,Indoor,Batten,8.5,28,"{""housing"": 1, ""pcb_panel"": 1, ""led_chip"": 12, ""driver"": 1, ""diffuser"": 1, ""endcap"": 2}"
+IND-PAN-001,2x2 Panel Light 40W,Indoor,Panel,14.0,38,"{""frame"": 1, ""pcb_panel"": 2, ""led_chip"": 24, ""driver"": 1, ""light_guide"": 1, ""backplate"": 1}"
+IND-EPL-001,Edgelit Panel 600x600,Indoor,Edgelit Panel,16.5,42,"{""frame"": 1, ""pcb_strip"": 2, ""led_chip"": 36, ""driver"": 1, ""light_guide"": 1, ""diffuser"": 1}"
+IND-BLB-001,LED Bulb A60 9W,Indoor,Bulb,1.8,12,"{""housing_plastic"": 1, ""pcb_round"": 1, ""led_chip"": 6, ""driver_compact"": 1, ""lens"": 1, ""base_e27"": 1}"
+OUT-FLD-001,Eco Flood Light 100W,Outdoor,Flood,22.0,55,"{""housing_die_cast"": 1, ""pcb_panel"": 2, ""led_chip"": 48, ""driver"": 1, ""lens_array"": 1, ""bracket"": 1, ""gasket"": 1}"
+OUT-STR-001,Street Light 150W,Outdoor,Street,45.0,72,"{""housing_die_cast"": 1, ""pcb_panel"": 3, ""led_chip"": 72, ""driver_hv"": 1, ""lens_array"": 2, ""arm_adapter"": 1, ""surge_protector"": 1}"
+IND-HBU-001,High Bay UFO 200W,Industrial,High Bay,38.0,65,"{""housing_finned"": 1, ""pcb_panel"": 2, ""led_chip"": 60, ""driver_hv"": 1, ""lens_120deg"": 1, ""hook_chain"": 1}"
+IND-WGL-001,Well Glass Light 40W,Industrial,Well Glass,12.0,35,"{""housing_polycarbonate"": 1, ""pcb_panel"": 1, ""led_chip"": 16, ""driver"": 1, ""glass_cover"": 1, ""guard"": 1}"
+IND-COB-001,COB Downlight 15W,Industrial,COB Downlight,6.5,22,"{""housing_aluminium"": 1, ""cob_module"": 1, ""driver_compact"": 1, ""reflector"": 1, ""spring_clip"": 2}"

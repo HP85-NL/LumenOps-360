@@ -1,0 +1,8 @@
+lumenops:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/lumenops.duckdb"
+      schema: main
+      threads: 4

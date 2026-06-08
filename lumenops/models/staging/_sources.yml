@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "Raw tables loaded from CSV by load_to_duckdb.py"
+    tables:
+      - name: dim_date
+        description: "Standard date dimension (Jan 2023 – Jun 2024)"
+      - name: dim_customer
+        description: "Dutch retail/wholesale customers"
+      - name: dim_product
+        description: "LED product catalog (Indoor/Outdoor/Industrial)"
+      - name: dim_line
+        description: "Three assembly lines"
+      - name: dim_shift
+        description: "Morning and Evening shifts"
+      - name: dim_defect_reason
+        description: "9 defect reason codes grounded in real LED manufacturing"
+      - name: dim_downtime_reason
+        description: "10 downtime reason codes (CHANGEOVER and MANPOWER_SHORT are top 2)"
+      - name: dim_supplier
+        description: "PCB and LED chip suppliers (includes single-source risk flags)"
+      - name: fact_production_log
+        description: "One row per line-shift-day: units, runtime, downtime, staffing"
+      - name: fact_qc_inspection
+        description: "QC results at PRODUCTION_QC and PACKAGING_QC stages"
+      - name: fact_sales_orders
+        description: "Customer sales orders with promised dates and priorities"
+      - name: fact_material_requisitions
+        description: "Material requests linked to sales orders, with shortage flags"
+      - name: fact_dispatch
+        description: "Order dispatch records with days_late calculation"
+      - name: fact_supplier_delivery
+        description: "Inbound supplier deliveries with lead time and quality data"

@@ -1,0 +1,67 @@
+<svg width="680" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', system-ui, sans-serif; background: #F5F3EE;">
+
+  <text x="340" y="30" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A49">LumenOps 360 — end-to-end architecture</text>
+
+  <!-- Python Generator -->
+  <rect x="225" y="50" width="230" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="340" y="76" text-anchor="middle" font-size="14" font-weight="500" fill="#085041">Python data generator</text>
+  <text x="340" y="110" text-anchor="middle" font-size="12" fill="#5F5E5A">seed=42  ·  14 CSVs  ·  ~16,400 rows</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="118" x2="340" y2="140" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- DuckDB -->
+  <rect x="245" y="142" width="190" height="44" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="340" y="168" text-anchor="middle" font-size="14" font-weight="500" fill="#0C447C">DuckDB</text>
+  <text x="340" y="202" text-anchor="middle" font-size="12" fill="#5F5E5A">lumenops.duckdb  ·  single source of truth</text>
+
+  <line x1="340" y1="210" x2="340" y2="232" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- dbt container -->
+  <rect x="110" y="234" width="460" height="158" rx="16" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="340" y="258" text-anchor="middle" font-size="14" font-weight="500" fill="#3C3489">dbt transformation layer</text>
+  <text x="340" y="276" text-anchor="middle" font-size="12" fill="#534AB7">27 models  ·  61 tests passing</text>
+
+  <!-- Staging -->
+  <rect x="138" y="292" width="120" height="50" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="198" y="312" text-anchor="middle" font-size="13" font-weight="500" fill="#444441">Staging</text>
+  <text x="198" y="330" text-anchor="middle" font-size="11" fill="#5F5E5A">14 models</text>
+
+  <line x1="258" y1="317" x2="278" y2="317" stroke="#888780" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Intermediate -->
+  <rect x="280" y="292" width="130" height="50" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="345" y="312" text-anchor="middle" font-size="13" font-weight="500" fill="#444441">Intermediate</text>
+  <text x="345" y="330" text-anchor="middle" font-size="11" fill="#5F5E5A">7 models</text>
+
+  <line x1="410" y1="317" x2="430" y2="317" stroke="#888780" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Marts -->
+  <rect x="432" y="292" width="110" height="50" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="487" y="312" text-anchor="middle" font-size="13" font-weight="500" fill="#444441">Marts</text>
+  <text x="487" y="330" text-anchor="middle" font-size="11" fill="#5F5E5A">6 models</text>
+
+  <text x="340" y="378" text-anchor="middle" font-size="11" fill="#534AB7" font-style="italic">Business logic lives here — not in Power BI DAX</text>
+
+  <!-- Arrows to outputs -->
+  <line x1="250" y1="392" x2="195" y2="430" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="430" y1="392" x2="485" y2="430" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Power BI -->
+  <rect x="100" y="432" width="190" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="195" y="454" text-anchor="middle" font-size="14" font-weight="500" fill="#633806">Power BI</text>
+  <text x="195" y="474" text-anchor="middle" font-size="12" fill="#854F0B">6 dashboard pages</text>
+
+  <!-- Jupyter -->
+  <rect x="390" y="432" width="190" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="485" y="454" text-anchor="middle" font-size="14" font-weight="500" fill="#712B13">Jupyter notebooks</text>
+  <text x="485" y="474" text-anchor="middle" font-size="12" fill="#993C1D">EDA  ·  SPC  ·  hypothesis</text>
+
+  <text x="340" y="512" text-anchor="middle" font-size="12" fill="#888780">GitHub  ·  LinkedIn  ·  portfolio</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+</svg>

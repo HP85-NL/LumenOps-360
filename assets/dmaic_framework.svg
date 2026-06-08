@@ -1,0 +1,111 @@
+<svg width="680" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', system-ui, sans-serif; background: #F5F3EE;">
+
+  <text x="340" y="28" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A49">DMAIC cycle — as applied in this project</text>
+
+  <!-- Phase boxes -->
+  <rect x="30" y="50" width="112" height="44" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="86" y="76" text-anchor="middle" font-size="14" font-weight="500" fill="#0C447C">Define</text>
+
+  <line x1="142" y1="72" x2="162" y2="72" stroke="#888780" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <rect x="165" y="50" width="112" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="221" y="76" text-anchor="middle" font-size="14" font-weight="500" fill="#085041">Measure</text>
+
+  <line x1="277" y1="72" x2="297" y2="72" stroke="#888780" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <rect x="300" y="50" width="112" height="44" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="356" y="76" text-anchor="middle" font-size="14" font-weight="500" fill="#3C3489">Analyze</text>
+
+  <line x1="412" y1="72" x2="432" y2="72" stroke="#888780" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <rect x="435" y="50" width="112" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="491" y="76" text-anchor="middle" font-size="14" font-weight="500" fill="#633806">Improve</text>
+
+  <line x1="547" y1="72" x2="567" y2="72" stroke="#888780" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <rect x="570" y="50" width="90" height="44" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="615" y="76" text-anchor="middle" font-size="14" font-weight="500" fill="#712B13">Control</text>
+
+  <!-- Vertical connectors -->
+  <line x1="86" y1="94" x2="86" y2="118" stroke="#185FA5" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="221" y1="94" x2="221" y2="118" stroke="#0F6E56" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="356" y1="94" x2="356" y2="118" stroke="#534AB7" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="491" y1="94" x2="491" y2="118" stroke="#854F0B" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="615" y1="94" x2="615" y2="118" stroke="#993C1D" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Detail cards -->
+  <rect x="16" y="120" width="152" height="120" rx="8" fill="white" stroke="#185FA5" stroke-width="0.3"/>
+  <text x="92" y="140" text-anchor="middle" font-size="11" fill="#0C447C">README problem</text>
+  <text x="92" y="156" text-anchor="middle" font-size="11" fill="#0C447C">statement</text>
+  <text x="92" y="178" text-anchor="middle" font-size="11" fill="#5F5E5A">5 root pain points</text>
+  <text x="92" y="196" text-anchor="middle" font-size="11" fill="#5F5E5A">Signify validation</text>
+  <text x="92" y="214" text-anchor="middle" font-size="11" fill="#5F5E5A">Page 1 — overview</text>
+
+  <rect x="149" y="120" width="146" height="120" rx="8" fill="white" stroke="#0F6E56" stroke-width="0.3"/>
+  <text x="222" y="140" text-anchor="middle" font-size="11" fill="#085041">Baseline KPIs</text>
+  <text x="222" y="158" text-anchor="middle" font-size="11" fill="#5F5E5A">OEE 68.2%</text>
+  <text x="222" y="174" text-anchor="middle" font-size="11" fill="#5F5E5A">OTD 80.6%</text>
+  <text x="222" y="190" text-anchor="middle" font-size="11" fill="#5F5E5A">FPY 96.7%</text>
+  <text x="222" y="210" text-anchor="middle" font-size="11" fill="#5F5E5A">Notebook 1 — EDA</text>
+  <text x="222" y="226" text-anchor="middle" font-size="11" fill="#5F5E5A">Pages 1–4</text>
+
+  <rect x="284" y="120" width="146" height="120" rx="8" fill="white" stroke="#534AB7" stroke-width="0.3"/>
+  <text x="357" y="140" text-anchor="middle" font-size="11" fill="#3C3489">Pareto + fishbone</text>
+  <text x="357" y="158" text-anchor="middle" font-size="11" fill="#5F5E5A">5 Whys case study</text>
+  <text x="357" y="176" text-anchor="middle" font-size="11" fill="#5F5E5A">5 hypothesis tests</text>
+  <text x="357" y="196" text-anchor="middle" font-size="11" fill="#5F5E5A">Notebooks 2 + 3</text>
+  <text x="357" y="214" text-anchor="middle" font-size="11" fill="#5F5E5A">Pages 3, 4, 6</text>
+
+  <rect x="419" y="120" width="146" height="120" rx="8" fill="white" stroke="#854F0B" stroke-width="0.3"/>
+  <text x="492" y="140" text-anchor="middle" font-size="11" fill="#633806">€66.5K/month</text>
+  <text x="492" y="156" text-anchor="middle" font-size="11" fill="#633806">opportunity sized</text>
+  <text x="492" y="178" text-anchor="middle" font-size="11" fill="#5F5E5A">Schedule freeze</text>
+  <text x="492" y="194" text-anchor="middle" font-size="11" fill="#5F5E5A">Staffing optimization</text>
+  <text x="492" y="210" text-anchor="middle" font-size="11" fill="#5F5E5A">SMED changeover</text>
+  <text x="492" y="226" text-anchor="middle" font-size="11" fill="#5F5E5A">Page 6 scenarios</text>
+
+  <rect x="554" y="120" width="116" height="120" rx="8" fill="white" stroke="#993C1D" stroke-width="0.3"/>
+  <text x="612" y="140" text-anchor="middle" font-size="11" fill="#712B13">61 dbt tests</text>
+  <text x="612" y="158" text-anchor="middle" font-size="11" fill="#5F5E5A">SPC charts</text>
+  <text x="612" y="176" text-anchor="middle" font-size="11" fill="#5F5E5A">UCL / LCL</text>
+  <text x="612" y="194" text-anchor="middle" font-size="11" fill="#5F5E5A">Western Electric</text>
+  <text x="612" y="212" text-anchor="middle" font-size="11" fill="#5F5E5A">rules applied</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="262" x2="640" y2="262" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+  <!-- Supporting frameworks -->
+  <text x="340" y="290" text-anchor="middle" font-size="14" font-weight="500" fill="#1B2A49">Six supporting frameworks</text>
+
+  <rect x="30" y="310" width="94" height="50" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.3"/>
+  <text x="77" y="330" text-anchor="middle" font-size="11" font-weight="500" fill="#444441">TPM / OEE</text>
+  <text x="77" y="348" text-anchor="middle" font-size="11" fill="#888780">Page 3</text>
+
+  <rect x="138" y="310" width="94" height="50" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.3"/>
+  <text x="185" y="330" text-anchor="middle" font-size="11" font-weight="500" fill="#444441">TOC</text>
+  <text x="185" y="348" text-anchor="middle" font-size="11" fill="#888780">Page 3</text>
+
+  <rect x="246" y="310" width="94" height="50" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.3"/>
+  <text x="293" y="330" text-anchor="middle" font-size="11" font-weight="500" fill="#444441">Lean</text>
+  <text x="293" y="348" text-anchor="middle" font-size="11" fill="#888780">Pages 2–5</text>
+
+  <rect x="354" y="310" width="94" height="50" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.3"/>
+  <text x="401" y="330" text-anchor="middle" font-size="11" font-weight="500" fill="#444441">SPC</text>
+  <text x="401" y="348" text-anchor="middle" font-size="11" fill="#888780">Notebook 2</text>
+
+  <rect x="462" y="310" width="94" height="50" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.3"/>
+  <text x="509" y="330" text-anchor="middle" font-size="11" font-weight="500" fill="#444441">Pareto / RCA</text>
+  <text x="509" y="348" text-anchor="middle" font-size="11" fill="#888780">Pages 3, 4</text>
+
+  <rect x="570" y="310" width="94" height="50" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.3"/>
+  <text x="617" y="330" text-anchor="middle" font-size="11" font-weight="500" fill="#444441">Fishbone</text>
+  <text x="617" y="348" text-anchor="middle" font-size="11" fill="#888780">docs/</text>
+
+  <text x="340" y="392" text-anchor="middle" font-size="11" fill="#888780" font-style="italic">Every framework is mapped to a specific deliverable — not listed as theory</text>
+
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+</svg>

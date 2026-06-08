@@ -1,0 +1,8 @@
+customer_id,customer_name,country,segment
+1,Gamma,NL,Retail
+2,Hornbach,NL,Retail
+3,Praxis,NL,Retail
+4,Karwei,NL,Retail
+5,Action,NL,Wholesale
+6,Jumbo,NL,Wholesale
+7,Coolblue,NL,B2B

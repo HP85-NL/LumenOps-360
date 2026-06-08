@@ -1,0 +1,288 @@
+version: 2
+
+models:
+  # ══════════════════════════════════════════════════════════
+  #  DIMENSION STAGING MODELS
+  # ══════════════════════════════════════════════════════════
+
+  - name: stg_dim_date
+    description: "Date dimension with fiscal and display labels"
+    columns:
+      - name: date_key
+        description: "Calendar date (PK) — renamed from raw 'date'"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_dim_customer
+    description: "Dutch retail and wholesale customers"
+    columns:
+      - name: customer_id
+        description: "Customer identifier (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: segment
+        description: "Customer segment"
+        tests:
+          - accepted_values:
+              values: ['Retail', 'B2B', 'Wholesale']
+
+  - name: stg_dim_product
+    description: "LED product catalog — Indoor, Outdoor, Industrial"
+    columns:
+      - name: sku
+        description: "Stock Keeping Unit code (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: category
+        description: "Product family"
+        tests:
+          - accepted_values:
+              values: ['Indoor', 'Outdoor', 'Industrial']
+      - name: unit_cost_eur
+        description: "Bill of materials cost per unit"
+        tests:
+          - not_null
+
+  - name: stg_dim_line
+    description: "Three assembly lines"
+    columns:
+      - name: line_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_dim_shift
+    description: "Morning and Evening shifts (2 × 8hr)"
+    columns:
+      - name: shift_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_dim_defect_reason
+    description: "9 defect codes from real LED manufacturing experience"
+    columns:
+      - name: defect_code
+        description: "Renamed from raw 'code'"
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values:
+                - 'FLICKER'
+                - 'HOUSING_SCRATCH'
+                - 'HOUSING_DAMAGE_ASSEMBLY'
+                - 'DUST_CONTAMINATION'
+                - 'COLOR_CONTAMINATION'
+                - 'SOLDER_FAIL'
+                - 'DRIVER_FAULT'
+                - 'POOR_PACKAGING'
+                - 'LUMEN_OUT_OF_SPEC'
+
+  - name: stg_dim_downtime_reason
+    description: "10 downtime codes — CHANGEOVER and MANPOWER_SHORT are top 2"
+    columns:
+      - name: downtime_code
+        description: "Renamed from raw 'code'"
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values:
+                - 'CHANGEOVER'
+                - 'MANPOWER_SHORT'
+                - 'MATERIAL_SHORTAGE_INTERNAL'
+                - 'SCHEDULE_CHANGE_MGMT'
+                - 'MACHINE_FAULT'
+                - 'PCB_SHORTAGE_SUPPLIER'
+                - 'LED_CHIP_SHORTAGE_SUPPLIER'
+                - 'QUALITY_HOLD'
+                - 'POWER_OUTAGE'
+                - 'CLEANING_MAINTENANCE'
+
+  - name: stg_dim_supplier
+    description: "PCB and LED chip suppliers with risk flags"
+    columns:
+      - name: supplier_id
+        tests:
+          - unique
+          - not_null
+      - name: component_type
+        tests:
+          - accepted_values:
+              values: ['PCB', 'LED_CHIP']
+
+  # ══════════════════════════════════════════════════════════
+  #  FACT STAGING MODELS
+  # ══════════════════════════════════════════════════════════
+
+  - name: stg_production_log
+    description: >
+      Core production fact — one row per line × shift × day.
+      Contains OEE components (runtime, downtime, units) and
+      staffing data for Dutch labor shortage analysis.
+    columns:
+      - name: prod_log_id
+        description: "Production log entry (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: production_date
+        description: "Date of production"
+        tests:
+          - not_null
+      - name: line_id
+        description: "Assembly line (FK to dim_line)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_line')
+              field: line_id
+      - name: shift_id
+        description: "Shift (FK to dim_shift)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_shift')
+              field: shift_id
+      - name: sku
+        description: "Product being manufactured (FK to dim_product)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_product')
+              field: sku
+      - name: downtime_reason
+        description: "Primary reason code for downtime (nullable — no downtime = null)"
+      - name: planned_operators
+        description: "Engineering standard: operators needed"
+        tests:
+          - not_null
+      - name: actual_operators
+        description: "Operators actually present on shift"
+        tests:
+          - not_null
+      - name: staffing_fill_rate
+        description: "actual_operators / planned_operators"
+
+  - name: stg_qc_inspection
+    description: >
+      QC results — two inspections per production batch
+      (PRODUCTION_QC and PACKAGING_QC). FPY and defect analysis.
+    columns:
+      - name: qc_id
+        description: "Inspection record (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: batch_id
+        description: "Links to production batch"
+        tests:
+          - not_null
+      - name: stage
+        description: "Inspection stage"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PRODUCTION_QC', 'PACKAGING_QC']
+      - name: units_inspected
+        description: "Count of units inspected"
+        tests:
+          - not_null
+      - name: defect_reason
+        description: "Primary defect found (nullable if all passed)"
+
+  - name: stg_sales_orders
+    description: "Customer orders with promised delivery dates and priorities"
+    columns:
+      - name: order_id
+        description: "Sales order number (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "FK to dim_customer"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_customer')
+              field: customer_id
+      - name: sku
+        description: "FK to dim_product"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_product')
+              field: sku
+      - name: priority
+        description: "Order priority level"
+        tests:
+          - accepted_values:
+              values: ['Standard', 'Urgent', 'VIP']
+      - name: order_value_eur
+        description: "qty_ordered × unit_price_eur"
+
+  - name: stg_material_requisitions
+    description: "Material requests from production floor to store"
+    columns:
+      - name: mr_id
+        description: "Material requisition number (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Linked sales order (FK)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_sales_orders')
+              field: order_id
+
+  - name: stg_dispatch
+    description: "Order dispatch records with on-time delivery classification"
+    columns:
+      - name: dispatch_id
+        description: "Dispatch record (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Linked sales order (FK)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_sales_orders')
+              field: order_id
+      - name: is_on_time
+        description: "True if days_late <= 0"
+        tests:
+          - not_null
+      - name: delivery_bucket
+        description: "Delivery timing classification"
+        tests:
+          - accepted_values:
+              values: ['ON_TIME', 'LATE_1_3_DAYS', 'LATE_4_7_DAYS', 'LATE_8_PLUS_DAYS']
+
+  - name: stg_supplier_delivery
+    description: "Inbound supplier deliveries — lead time, quality, tariff exposure"
+    columns:
+      - name: delivery_id
+        description: "Delivery record (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: supplier_id
+        description: "FK to dim_supplier"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_supplier')
+              field: supplier_id
+      - name: component_type
+        description: "PCB or LED_CHIP"
+        tests:
+          - accepted_values:
+              values: ['PCB', 'LED_CHIP']
