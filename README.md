@@ -322,12 +322,6 @@ dbt test --profiles-dir .       # 61 tests, all passing
 
 This is the third project in a deliberate portfolio sequence — each progressively deeper in domain coverage and analytical sophistication:
 
-| Project | Domain | Focus |
-|---------|--------|-------|
-| BI 360 | FMCG | Business intelligence fundamentals |
-| SwiftRoute / Hoogland Outdoors | Logistics | Route optimization + supply chain |
-| **LumenOps 360** | **Manufacturing** | **Operations intelligence — deepest technical and domain coverage** |
-
 ---
 
 <p align="center"><em>Built with Python, DuckDB, dbt, Power BI, and Jupyter.<br/>Targeting operations analyst and data analyst roles in Dutch manufacturing.</em></p>
